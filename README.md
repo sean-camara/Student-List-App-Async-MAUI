@@ -16,6 +16,34 @@ The goal of this exercise is to convert a synchronous MAUI application into an a
 
 ---
 
+## 🔁 Side-by-Side Comparison (Before vs. After)
+
+### 🆚 **Database Initialization**
+
+| **Before (Synchronous)** | **After (Asynchronous)** |
+|--------------------------|--------------------------|
+| ```csharp<br>public void Init()<br>{<br>    if (conn != null) return;<br>    conn = new SQLiteConnection(dbPath);<br>    conn.CreateTable<Student>();<br>} ``` | ```csharp<br>public async Task Init()<br>{<br>    if (conn != null) return;<br>    string dbPath = Path.Combine(FileSystem.AppDataDirectory, "students.db");<br>    conn = new SQLiteAsyncConnection(dbPath);<br>    await conn.CreateTableAsync<Student>();<br>} ``` |
+
+### 🆚 **Insert Operation**
+
+| **Before (Synchronous)** | **After (Asynchronous)** |
+|--------------------------|--------------------------|
+| ```csharp<br>public void AddNewStudent(string name)<br>{<br>    conn.Insert(new Student { Name = name });<br>} ``` | ```csharp<br>public async Task AddNewStudent(string name)<br>{<br>    await Init();<br>    await conn.InsertAsync(new Student { Name = name });<br>} ``` |
+
+### 🆚 **Retrieve Operation**
+
+| **Before (Synchronous)** | **After (Asynchronous)** |
+|--------------------------|--------------------------|
+| ```csharp<br>public List<Student> GetSection()<br>{<br>    return conn.Table<Student>().ToList();<br>} ``` | ```csharp<br>public async Task<List<Student>> GetSection()<br>{<br>    await Init();<br>    return await conn.Table<Student>().ToListAsync();<br>} ``` |
+
+### 🆚 **UI Button Handler**
+
+| **Before (Synchronous)** | **After (Asynchronous)** |
+|--------------------------|--------------------------|
+| ```csharp<br>private void OnNewButtonClicked(object sender, EventArgs e)<br>{<br>    App.StudentRepo.AddNewStudent(name);<br>} ``` | ```csharp<br>private async void OnNewButtonClicked(object sender, EventArgs e)<br>{<br>    await App.StudentRepo.AddNewStudent(name);<br>} ``` |
+
+---
+
 ## 🧱 System Architecture
 
 ### 🗂 Layers Used
