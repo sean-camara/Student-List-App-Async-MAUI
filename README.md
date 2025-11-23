@@ -1,4 +1,4 @@
-# Student List App — Asynchronous SQLite Implementation (.NET MAUI)
+# 07 Laboratory Exercise 2
 
 This repository demonstrates the transformation of a synchronous MAUI SQLite application into a fully asynchronous student list manager using `SQLiteAsyncConnection`. All CRUD operations now use `async/await`, ensuring smooth UI performance even with larger datasets.
 
