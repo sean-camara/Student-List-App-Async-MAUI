@@ -5,14 +5,6 @@ This project demonstrates proper use of `async/await` to maintain UI responsiven
 
 ---
 
-## 👤 Student Information
-
-**Name:** Sean John Camara  
-**Course:** IT2115 – Mobile Development  
-**Institution:** STI College  
-
----
-
 ## 🎯 Objectives
 
 - Convert the original Student List App from synchronous to **asynchronous SQLite operations**.
