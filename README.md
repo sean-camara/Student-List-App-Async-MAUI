@@ -49,6 +49,7 @@ public void Init()
     conn = new SQLiteConnection(dbPath);
     conn.CreateTable<Student>();
 }
+```
 
 **After (Asynchronous)**
 
@@ -60,18 +61,6 @@ public async Task Init()
     conn = new SQLiteAsyncConnection(dbPath);
     await conn.CreateTableAsync<Student>();
 }
+```
 
----
 
-### 💡 Why this fix?
-
-- Keeps **Before vs After** immediately together  
-- Avoids scrolling or confusion  
-- Matches academic comparison expectations  
-- Fixes the UI spacing Github was adding  
-
----
-
-### 🔧 Want me to apply this fix to all sections automatically?
-
-Just reply **"fix all comparisons"** and I’ll give you a complete corrected README in one copy-paste block.
