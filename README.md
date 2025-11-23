@@ -2,6 +2,13 @@
 
 This repository demonstrates the transformation of a synchronous MAUI SQLite application into a fully **asynchronous student list manager**, using `SQLiteAsyncConnection`. All CRUD operations now use `async/await`, ensuring smooth UI performance even with larger datasets.
 
+### 📍 Source of Original (Synchronous) Project
+
+The code in this repository is an improved asynchronous version of the original synchronous Student List application, which can be found here:
+
+🔗 **Original Project (Before Conversion):**
+https://github.com/sean-camara/Student_List_App
+
 ---
 
 ## Objectives
