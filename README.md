@@ -3,8 +3,6 @@
 This repository converts a synchronous MAUI student list app to a fully **asynchronous** implementation using `SQLiteAsyncConnection`.  
 All database operations now use `async/await`, the UI calls await repository methods, and the app includes async CRUD and optional paging features.
 
-**Lab reference (local copy):** `/mnt/data/07_Laboratory_Exercise_2(9).pdf`. :contentReference[oaicite:1]{index=1}
-
 ---
 
 ## Objectives (from the lab)
