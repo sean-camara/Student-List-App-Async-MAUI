@@ -1,11 +1,11 @@
 # Student List App — Asynchronous SQLite Implementation (.NET MAUI)
 
 A .NET MAUI application that manages local student records using **fully asynchronous SQLite operations**.  
-This project refactors a synchronous version and applies complete `async/await` support, fulfilling the requirements of **Laboratory Exercise #2: Using SQLite Asynchronously** while extending the functionality beyond the minimum requirements.
+This project refactors a synchronous version and applies complete `async/await` support, fulfilling the requirements of *Laboratory Exercise #2: Using SQLite Asynchronously* while extending the functionality beyond the minimum requirements.
 
 ---
 
-## Purpose of the Laboratory Exercise
+## 🧾 Purpose of the Laboratory Exercise
 
 The goal of this exercise is to convert a synchronous MAUI application into an asynchronous one by:
 
@@ -16,9 +16,9 @@ The goal of this exercise is to convert a synchronous MAUI application into an a
 
 ---
 
-## System Architecture
+## 🧱 System Architecture
 
-### Layers Used
+### 🗂 Layers Used
 
 | Layer | Description |
 |-------|-------------|
@@ -27,7 +27,13 @@ The goal of this exercise is to convert a synchronous MAUI application into an a
 | SQLite Database | Stores local student records |
 | Data Model | Defines the `Student` table schema |
 
-```text
-┌────────────┐        ┌────────────────────┐        ┌─────────────────────┐
-│   UI/XAML  │  -->   │ StudentRepository  │  -->   │ SQLiteAsyncConnection│
-└────────────┘        └────────────────────┘        └─────────────────────┘
+
+---
+
+## 🗃 Database Design
+
+### 📌 Student Table Schema
+```csharp
+[PrimaryKey, AutoIncrement]
+public int Id { get; set; }
+public string Name { get; set; }
